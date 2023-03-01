@@ -89,3 +89,26 @@ std::string List::toString(){
   result = result + "nullptr";
   return result;
 }
+
+//PART 1 ATTEPMPTS
+
+bool List::contains(std::string item) {
+  Node *tmp = this->head;
+  bool result = false;
+
+  while (tmp != nullptr){
+    std::string current_item = tmp->getData();
+    if (current_item == item) {
+      result = true;
+    }
+    tmp = tmp->getNext();
+  }
+  return result;
+}
+
+void List::remove(int loc) {
+
+  return;
+}
+
+

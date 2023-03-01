@@ -20,5 +20,8 @@ int main()
   std::cout << l->toString() << "\n";
   l->insert(5,"inserted at end");
   std::cout << l->toString() << " " << l->length() << "\n";
+
+  std::cout << "does l contain \"inserted at 2\"? " << l->contains("inserted at 2") << "\n";
+  std::cout << "does l contain \"inserted at 1\"? " << l->contains("inserted at 1") << "\n";
   return 0;
 }
