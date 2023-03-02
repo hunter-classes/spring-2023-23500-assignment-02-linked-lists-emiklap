@@ -91,7 +91,7 @@ std::string List::toString(){
 }
 
 
-//PART 1 ATTEMPS
+//PART 1 ATTEMPTS
 
 bool List::contains(std::string item) {
   Node *tmp = this->head;
@@ -127,7 +127,7 @@ void List::remove(int loc) {
   // insert past the end
   if (loc > 0){
     // do something to indicate this is invalid
-    throw std::out_of_range("Our insert is out of range");
+    throw std::out_of_range("Our remove is out of range");
   }
 
   //by setting the next node of the trailer to walker, we are cutting out the middle node from the list
@@ -136,4 +136,16 @@ void List::remove(int loc) {
   return;
 }
 
+List::~List() {
+  Node *tmp, *next;
+  tmp = this->head;
+  next = this->head->getNext();
+  while (next != nullptr){
+    tmp = nullptr;
+    tmp = next;
+    next->getNext();
+    std::cout << tmp << " ";
+  }
+  next = nullptr;
+}
 
