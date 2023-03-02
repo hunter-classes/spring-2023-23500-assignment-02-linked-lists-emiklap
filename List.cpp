@@ -90,7 +90,8 @@ std::string List::toString(){
   return result;
 }
 
-//PART 1 ATTEPMPTS
+
+//PART 1 ATTEMPS
 
 bool List::contains(std::string item) {
   Node *tmp = this->head;
@@ -107,6 +108,30 @@ bool List::contains(std::string item) {
 }
 
 void List::remove(int loc) {
+  //have three nodes: a walker in front, one in the middle, and a trailer at the end
+  Node *walker, *middle, *trailer;
+  walker = this->head; // start of the list
+  middle = nullptr;
+  trailer = nullptr; // one behind
+
+  //this loop should stop when the middle reaches the location or when the walker goes out of bounds
+  while(loc>=0 && walker != nullptr){
+    loc--;
+    trailer=middle;
+    middle = walker;
+    walker = walker->getNext();
+
+  }
+
+  // test to see if we're trying to
+  // insert past the end
+  if (loc > 0){
+    // do something to indicate this is invalid
+    throw std::out_of_range("Our insert is out of range");
+  }
+
+  //by setting the next node of the trailer to walker, we are cutting out the middle node from the list
+  trailer->setNext(walker);
 
   return;
 }
