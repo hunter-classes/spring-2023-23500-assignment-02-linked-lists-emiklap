@@ -32,8 +32,9 @@ int main()
   l->remove(3);
   std::cout << "After removing item @ loc 3: " << l->toString() << "\n";
 
-  l->remove(5);
-  std::cout << "After removing item @ loc 5: " << l->toString() << "\n";
-  std::cout << "The list should not have an item at location 5, so this should not remove anything??? \n";
+  l->remove(4);
+  std::cout << "After removing item @ loc 4: " << l->toString() << "\n";
+
+  delete l;
   return 0;
 }

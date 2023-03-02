@@ -78,7 +78,7 @@ int List::length(){
   return count;
 }
 
-std::string List::toString(){
+std::string List::toString() {
   Node *tmp = this->head;
   std::string result = "";
   while (tmp != nullptr){
@@ -108,44 +108,42 @@ bool List::contains(std::string item) {
 }
 
 void List::remove(int loc) {
-  //have three nodes: a walker in front, one in the middle, and a trailer at the end
-  Node *walker, *middle, *trailer;
-  walker = this->head; // start of the list
-  middle = nullptr;
-  trailer = nullptr; // one behind
+  Node *walker, *trailer;
+  walker = this->head;
+  trailer = nullptr;
 
   //this loop should stop when the middle reaches the location or when the walker goes out of bounds
-  while(loc>=0 && walker != nullptr){
+  while(loc > 0 && walker != nullptr){
     loc--;
-    trailer=middle;
-    middle = walker;
+    trailer=walker;
     walker = walker->getNext();
 
   }
 
-  // test to see if we're trying to
-  // insert past the end
-  if (loc > 0){
-    // do something to indicate this is invalid
+  //if the walker goes out of bounds, the remove loc was not in range
+  if (walker == nullptr) {
     throw std::out_of_range("Our remove is out of range");
   }
 
-  //by setting the next node of the trailer to walker, we are cutting out the middle node from the list
-  trailer->setNext(walker);
-
+  if (trailer == nullptr) {
+    head = walker->getNext();
+  } else {
+    trailer->setNext(walker->getNext());
+  }
+  delete walker;
   return;
 }
 
 List::~List() {
-  Node *tmp, *next;
-  tmp = this->head;
-  next = this->head->getNext();
-  while (next != nullptr){
-    tmp = nullptr;
-    tmp = next;
-    next->getNext();
-    std::cout << tmp << " ";
-  }
-  next = nullptr;
-}
+  std::cerr << "Calling the destructor \n";
+  Node *walker, *trailer;
+  walker = this->head;
+  trailer = nullptr;
 
+  //this loop should stop when the middle reaches the location or when the walker goes out of bounds
+  while(walker != nullptr){
+    trailer=walker;
+    walker = walker->getNext();
+    delete trailer;
+  }
+}
