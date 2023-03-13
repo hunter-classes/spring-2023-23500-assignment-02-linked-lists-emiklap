@@ -47,12 +47,18 @@ int main()
   l->insert(4);
   l->insert(2);
 
-  std::cout << l->toString() << "\n";
+  std::cout << "> Adding 10, 12, 3, 4, 2\n";
+  std::cout << l->toString() << "\n\n";
 
   std::cout <<"does list contain 2? " << l->contains(2) << "\n";
   std::cout <<"does list contain 1000? " << l->contains(1000) << "\n";
-  std::cout <<"item at location 2 is:  " << l->get(2) << "\n";
+  std::cout <<"item at location 2 is:  " << l->get(2) << "\n\n";
   //this works, but it will crash the program so I commented it out
   //std::cout <<"item at location 10 is:  " << l->get(10) << "\n";
+
+  l->remove(0);
+  l->remove(2);
+  std::cout << "> Remove the item at 0, then 2\n";
+  std::cout << l->toString() << "\n";
   return 0;
 }

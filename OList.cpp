@@ -118,3 +118,32 @@ int OList::get(int loc) {
   }
   return tmp->getData();
 }
+
+/**
+ * removes the value at loc
+ */
+void OList::remove(int loc) {
+  Node *walker, *trailer;
+  walker = this->head;
+  trailer = nullptr;
+
+  //this loop should stop when the middle reaches the location or when the walker goes out of bounds
+  while(loc > 0 && walker != nullptr){
+    loc--;
+    trailer=walker;
+    walker = walker->getNext();
+  }
+
+  //if the walker goes out of bounds, the remove loc was not in range
+  if (walker == nullptr) {
+    throw std::out_of_range("Our remove is out of range");
+  }
+
+  if (trailer == nullptr) {
+    head = walker->getNext();
+  } else {
+    trailer->setNext(walker->getNext());
+  }
+  delete walker;
+  return;
+}

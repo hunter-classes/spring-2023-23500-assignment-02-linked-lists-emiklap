@@ -21,7 +21,7 @@ class OList{
   //returns the value at loc
   int get(int loc);
 
-  //returns the value at loc
+  //removes the value at loc
   void remove(int loc);
 
   //  This should “reverse” the list - that is reverse the pointers
