@@ -41,25 +41,16 @@ int main()
 
   OList *l = new OList();
   l->insert(10);
-    std::cout << l->toString() << "\n";
-
   l->insert(12);
-  std::cout << l->toString() << "\n";
-
-
   l->insert(3);
-  std::cout << l->toString() << "\n";
-
-
   l->insert(6);
-  std::cout << l->toString() << "\n";
-
   l->insert(4);
-  std::cout << l->toString() << "\n";
-
   l->insert(2);
 
-
   std::cout << l->toString() << "\n";
+
+  std::cout <<"does list contain 2? " << l->contains(2) << "\n";
+  std::cout <<"does list contain 1000? " << l->contains(1000) << "\n";
+
   return 0;
 }

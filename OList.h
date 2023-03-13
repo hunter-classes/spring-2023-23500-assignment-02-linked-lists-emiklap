@@ -16,7 +16,7 @@ class OList{
   std::string toString();
 
   //returns true if value is in the list, false otherwise
-  bool contains(std::string item);
+  bool contains(int item);
 
   //returns the value at loc
   int get(int loc);

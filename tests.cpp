@@ -16,3 +16,10 @@ TEST_CASE("toString and insert functions") {
   test1->insert(2);
   CHECK(test1->toString() == "12-->10-->6-->4-->3-->2-->nullptr");
 }
+
+TEST_CASE("contains function") {
+  CHECK(test1->contains(10));
+  CHECK(test1->contains(4));
+  CHECK(!test1->contains(15));
+  CHECK(!test1->contains(0));
+}

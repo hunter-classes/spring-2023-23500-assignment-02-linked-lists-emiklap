@@ -84,3 +84,20 @@ std::string OList::toString() {
   result = result + "nullptr";
   return result;
 }
+
+/**
+ * returns true if value is in the list, false otherwise
+ */
+bool OList::contains(int item) {
+  Node *tmp = this->head;
+  bool result = false;
+
+  while (tmp != nullptr){
+    int current_item = tmp->getData();
+    if (current_item == item) {
+      result = true;
+    }
+    tmp = tmp->getNext();
+  }
+  return result;
+}
