@@ -24,7 +24,7 @@ void Node::setNext(Node *next){
   this->next = next;
 }
 
-std::string Node::getData(){
+int Node::getData(){
   return this->data;
 }
 

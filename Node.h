@@ -12,6 +12,6 @@ class Node{
   void setData(int data);
   void setNext(Node *next);
 
-  std::string getData();
+  int getData();
   Node *getNext();
 };
