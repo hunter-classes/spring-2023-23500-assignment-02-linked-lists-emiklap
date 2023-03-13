@@ -147,3 +147,23 @@ void OList::remove(int loc) {
   delete walker;
   return;
 }
+
+/**
+ * This should “reverse” the list - that is reverse the pointers
+ */
+void OList::reverse() {
+  Node *walker = head;
+  Node *trailer = nullptr;
+  Node *tmp = walker->getNext();
+
+  while (tmp != nullptr) {
+    walker->setNext(trailer);
+    trailer = walker;
+    walker = tmp;
+    tmp = tmp->getNext();
+  }
+  walker->setNext(trailer);
+
+  head = walker;
+  return;
+}

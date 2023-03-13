@@ -39,3 +39,13 @@ TEST_CASE("remove and toString functions") {
   test1->remove(3);
   CHECK(test1->toString() == "10-->6-->4-->3-->2-->nullptr");
 }
+
+TEST_CASE("reverse and toString function") {
+  test1->reverse();
+  CHECK(test1->toString() == "2-->3-->4-->6-->10-->nullptr");
+  test1->reverse();
+  CHECK(test1->toString() == "10-->6-->4-->3-->2-->nullptr");
+}
+
+//Sorry, I'm not sure how to test this one
+TEST_CASE("deconstructor") { }

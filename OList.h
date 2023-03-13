@@ -9,6 +9,9 @@ class OList{
   OList();
   ~OList();
 
+  //helper function
+  int getHead();
+
   //Insert a new node with value into the list in its proper location
   void insert(int data);
 
