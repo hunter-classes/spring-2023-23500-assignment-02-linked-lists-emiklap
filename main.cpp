@@ -51,6 +51,8 @@ int main()
 
   std::cout <<"does list contain 2? " << l->contains(2) << "\n";
   std::cout <<"does list contain 1000? " << l->contains(1000) << "\n";
-
+  std::cout <<"item at location 2 is:  " << l->get(2) << "\n";
+  //this works, but it will crash the program so I commented it out
+  //std::cout <<"item at location 10 is:  " << l->get(10) << "\n";
   return 0;
 }

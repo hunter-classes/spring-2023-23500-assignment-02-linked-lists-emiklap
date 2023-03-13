@@ -101,3 +101,20 @@ bool OList::contains(int item) {
   }
   return result;
 }
+
+/**
+ *  returns the value at loc
+ */
+int OList::get(int loc) {
+  Node *tmp = this->head;
+
+  while(loc > 0 && tmp != nullptr) {
+    loc--;
+    tmp = tmp->getNext();
+  }
+
+  if (tmp == nullptr) {
+    throw std::out_of_range("Our remove is out of range");
+  }
+  return tmp->getData();
+}
