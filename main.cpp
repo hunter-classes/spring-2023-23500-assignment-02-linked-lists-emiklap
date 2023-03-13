@@ -40,5 +40,26 @@ int main()
   */
 
   OList *l = new OList();
+  l->insert(10);
+    std::cout << l->toString() << "\n";
+
+  l->insert(12);
+  std::cout << l->toString() << "\n";
+
+
+  l->insert(3);
+  std::cout << l->toString() << "\n";
+
+
+  l->insert(6);
+  std::cout << l->toString() << "\n";
+
+  l->insert(4);
+  std::cout << l->toString() << "\n";
+
+  l->insert(2);
+
+
+  std::cout << l->toString() << "\n";
   return 0;
 }

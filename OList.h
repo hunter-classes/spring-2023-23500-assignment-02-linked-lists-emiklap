@@ -7,6 +7,7 @@ class OList{
   Node *head;
  public:
   OList();
+  ~OList();
 
   //Insert a new node with value into the list in its proper location
   void insert(int data);
@@ -25,6 +26,4 @@ class OList{
 
   //  This should “reverse” the list - that is reverse the pointers
   void reverse();
-
-  ~OList();
 };
