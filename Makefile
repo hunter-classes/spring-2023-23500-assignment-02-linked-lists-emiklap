@@ -1,8 +1,10 @@
-OBJECTS=List.o main.o Node.o
+OBJECTS=OList.o main.o Node.o
 CXXFLAGS=-g
 
 main: $(OBJECTS)
 	g++ -g -o main $(OBJECTS)
+
+OList.o: OList.cpp Node.h OList.h
 
 List.o: List.cpp Node.h List.h
 

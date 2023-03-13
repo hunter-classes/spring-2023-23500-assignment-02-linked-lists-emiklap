@@ -1,9 +1,10 @@
 #include <iostream>
-#include "List.h"
+//#include "List.h"
+#include "OList.h"
 
 int main()
 {
-  List *l = new List();
+  /*List *l = new List();
   std::cout << l->toString() << " " << l->length() << "\n";
   l->insert(0,"a");
   std::cout << l->toString() << " " << l->length() << "\n";
@@ -36,5 +37,8 @@ int main()
   std::cout << "After removing item @ loc 4: " << l->toString() << "\n";
 
   delete l;
+  */
+
+  OList *l = new OList();
   return 0;
 }
