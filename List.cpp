@@ -7,7 +7,7 @@ List::List(){
 }
 
 // insert at the "front" (head)
-void List::insert(std::string data){
+void List::insert(int data){
   Node *tmp = new Node(data);
   tmp->setNext(head);
   head = tmp;
@@ -20,7 +20,7 @@ void List::insert(std::string data){
 
   Piggybacking
  */
-void List::insert(int loc, std::string data){
+void List::insert(int loc, int data){
   Node *walker, *trailer;
   walker = this->head; // start of the list
   trailer = nullptr; // one behind
@@ -82,7 +82,7 @@ std::string List::toString() {
   Node *tmp = this->head;
   std::string result = "";
   while (tmp != nullptr){
-    result = result + tmp->getData();
+    result = result + std::to_string(tmp->getData());
     result = result + "-->";
     tmp = tmp->getNext();
   }
@@ -92,13 +92,12 @@ std::string List::toString() {
 
 
 //PART 1 ATTEMPTS
-
-bool List::contains(std::string item) {
+bool List::contains(int item) {
   Node *tmp = this->head;
   bool result = false;
 
   while (tmp != nullptr){
-    std::string current_item = tmp->getData();
+    int current_item = tmp->getData();
     if (current_item == item) {
       result = true;
     }

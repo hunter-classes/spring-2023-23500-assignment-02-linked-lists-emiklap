@@ -7,14 +7,14 @@ class List{
   Node *head;
  public:
   List();
-  void insert(std::string data);
-  void insert(int loc, std::string data); //0 indexed
+  void insert(int data);
+  void insert(int loc, int data); //0 indexed
   int length();
 
   std::string toString(); // for testing purposes
 
   //part 1 functions
-  bool contains(std::string item);
+  bool contains(int item);
   void remove(int loc);
   ~List();
 };

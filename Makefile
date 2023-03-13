@@ -1,4 +1,4 @@
-OBJECTS=OList.o main.o Node.o
+OBJECTS=OList.o List.o main.o Node.o
 CXXFLAGS=-g
 
 main: $(OBJECTS)
@@ -12,7 +12,7 @@ OList.o: OList.cpp Node.h OList.h
 
 List.o: List.cpp Node.h List.h
 
-main.o: main.cpp OList.h Node.h
+main.o: main.cpp OList.h List.o Node.h
 
 tests.o: tests.cpp OList.h Node.h
 
