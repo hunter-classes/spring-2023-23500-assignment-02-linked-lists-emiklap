@@ -5,18 +5,18 @@ Node::Node() : next(nullptr)
 {
 }
 
-Node::Node(std::string data, Node *next){
+Node::Node(int data, Node *next){
   this->data = data;
   this->next = next;
 
 }
 
-Node::Node(std::string data){
+Node::Node(int data){
   this->data = data;
   this->next = nullptr;
 }
 
-void Node::setData(std::string data){
+void Node::setData(int data){
   this->data = data;
 }
 
